@@ -1,0 +1,93 @@
+#header {
+    position : fixed;
+    top : 0;
+    width : 100%;
+    z-index : 100;
+    text-align : center;
+    background-color : black;
+    color : white;
+}
+
+.title {
+    text-align : center;
+    margin-top : 100px;
+    margin-bottom : 40px;
+}
+
+.title a {
+    text-decoration : none !important;
+    color : black !important;
+
+}
+
+.container {
+    margin : 50px;
+}
+
+#topics {
+    padding : 0px;
+}
+
+.card-title {
+    font-size : 25px;
+    font-weight : bold;
+}
+
+.card {
+    background-color : #f1f9fb !important;
+    border : 3px solid black;
+    padding : 10px;
+    margin : 30px;
+}
+
+.feeds p {
+    font-size: 25px;
+}
+
+.latest-feeds a {
+    font-size: 15px;
+}
+
+.latest-feeds p {
+    font-size: 12px;
+}
+
+.table-element {
+    font-size : 13px;
+}
+
+li {
+    list-style-type : none;
+    margin : 0;
+    padding : 0;
+}
+
+.main-table .table-header {
+    font-size : 30px;
+    font-weight : bold;
+    margin : 0 !important;
+    padding : 0 !important;
+}
+
+.main-table .directory-table {
+    background-color : #f1f9fb;
+
+}
+
+.directory-table {
+    background-color : red;
+    margin : 0 !important;
+    padding : 0 !important;
+}
+
+.table {
+    margin : 0 !important;
+}
+
+.table-header .list-group-item {
+    margin : 0;
+}
+
+.btn-info {
+    float:right;
+}

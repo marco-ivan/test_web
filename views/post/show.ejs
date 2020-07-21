@@ -1,0 +1,37 @@
+<%- include("../partials/header") %>
+
+<h2 id="forumHeader" class="title display-2">Forum Discussion Page</h2>
+
+<div class="container mt-5">
+    <div id="topics">
+        <ul class="list-group main-table my-5">
+            <p class="list-group-item-info list-group-item text-center">
+                <a href="/forum/new" class="btn btn-lg btn-info" role="button">Start Discussion!</a>
+            </p>
+
+            <div class="py-0 directory-table my-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><strong>Title</strong></th>
+                            <th><strong>Date</strong></th>
+                            <th><strong>Author</strong></th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-element">
+                        <% posts.forEach(function(post) { %>
+                            <tr>
+                                <td><a href="/forum/<%= post._id %>""><%= post.title %></a></td>
+                                <td><%= post.created.toDateString() %></td>
+                                <td><%= post.author.username %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </ul>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

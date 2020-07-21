@@ -1,0 +1,56 @@
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.title {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+a {
+    text-decoration: none !important;
+    color: black !important;
+
+}
+
+.card {
+    margin-top: 75px;
+    margin-left: 175px;
+    margin-right: 175px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size:20px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 0px !important;
+}
+
+.card-title {
+    margin: 0px !important;
+}
+
+.card-body .input-group {
+    margin:0px !important;
+}
+
+.col-3 {
+    padding:0 !important;
+}
+
+.btn {
+    float:right;
+    margin-right:200px;
+    margin-bottom: 50px;
+}

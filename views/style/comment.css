@@ -1,0 +1,87 @@
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#delete-form {
+    display: inline;
+}
+
+#delete-form2 {
+    display: inline;
+}
+
+#toggleStyle {
+    display: none;
+}
+
+.title {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.title a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.topic-title {
+    font-size:30px;
+}
+
+.card {
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-right:25px;
+    margin-left:25px;
+    /* min-height:200px; */
+
+}
+
+.comment-box {
+    margin:0;
+}
+
+/* .row {
+    min-height:200px;
+} */
+
+.profile-name {
+    text-align:center;
+}
+
+.container {
+    margin-bottom:50px;
+}
+
+.btn-info {
+    margin-top:30px;
+    margin-bottom:50px;
+    margin-right:30px;
+}
+
+.reply-title {
+    margin:0;
+}
+
+.form-group {
+    padding:20px;
+}
+
+.form-control {
+    min-height: 200px;
+}
+
+body {
+    height: 100%;
+    background-image: url("/source/background3.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

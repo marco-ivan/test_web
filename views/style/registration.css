@@ -1,0 +1,17 @@
+div {
+    margin-right : 10 px;
+    padding : 20 px;
+}
+
+input {
+    height: 100 px;
+    width: 100 px;
+}
+
+.error {
+    padding-left : 10px;
+    color: red;
+    display : inline;
+    margin-top : 30px;
+    margin-bottom: 0;
+}
