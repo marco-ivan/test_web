@@ -1,8 +1,14 @@
 var mongoose = require("mongoose");
 
 var postSchema = new mongoose.Schema({
-   title: String,
-   content: String,
+   title: {
+      type : String, 
+      required : [true, 'Title Required']
+   },
+   content: {
+      type : String,
+      Required : [true, 'Message Required']
+   },
    author: {
       id: String,
       username: String

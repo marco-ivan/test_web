@@ -1,0 +1,40 @@
+<%- include("../partials/header") %>
+
+<h2 id="forumHeader" class="title display-2">Your Order History</h2>
+
+<div class="container mt-4">
+    <div id="topics">
+        <ul class="list-group main-table m4-5">
+            <div class="py-0 directory-table my-5">
+                <table class="table">
+                    <thead class="bg-dark text-light text-center">
+                        <tr>
+                            <th><strong>Date</strong></th>
+                            <th><strong>Order From</strong></th>
+                            <th><strong>Order To</strong></th>
+                            <th><strong>Open</strong></th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-element">
+                        <% histories.forEach(function(order) { %>
+                        <tr>
+                            <td><%= order.date %></td>
+                            <td><%= order.order_from %></td>
+                            <td><%= order.order_to %></td>
+                            <td><a class="btn btn-primary"
+                                    href="/profile/<%= currentUser.user_id %>/history/<%= order.order_id %>"><strong>OPEN</strong></a>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </ul>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<%- include("../partials/footer") %>

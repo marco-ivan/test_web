@@ -1,0 +1,75 @@
+<%- include("../partials/header") %>
+
+<div class="jumbo rounded mt-3 mx-auto" style="width: 95%;">
+    <div id="jumboPic" class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="align-items-center content">
+                <h1 class="text-light text-center">Welcome to Mix & Match!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="containerMain" class="container">
+    <div class="row justify-content-between align-items-center">
+        <div class="col-md-5">
+            <div class="box">
+                <p class="displayContent">
+                    This is an Orbital Project done by NUS year 1 undergraduates in order to learn individually
+                    about tech stacks that they preferred. We got this idea because we realize that the delivery cost of
+                    food delivery services are pretty expensive and most university students usually order the food
+                    delivery alone.
+                    Paying like S$5.00 alone everytime we order food just for the delivery can be a burden for most
+                    university students.
+                    Hence, we come up with the idea to make a platform where we can collate the orders of people living
+                    nearby so that
+                    not only they can share the delivery cost, but also get to know each other.
+                    <br>
+                    <br>
+                    At first we were planning to take the restaurants list for online delivery from
+                    <strong>GrabFood</strong>. However, we could not contact
+                    them through email and it is difficult to get the data from them. Thus, we use the data from
+                    <strong>FoodPanda</strong> as it is easier to
+                    access.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="box2">
+                <img src="source/community.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <br>
+</div>
+
+<% if(!currentUser){ %>
+<div id="flashCard" class="card mx-auto text-light" style="width: 75%;">
+    <div class="card-body">
+        <div class="container my-4 text-center">
+            <h3 class="display-3 text-center font-weight-bolder">
+                Get Started!
+            </h3>
+            <a class="btn btn-lg btn-primary card-link" href="/register">Sign Up</a>
+            <a class="btn btn-lg btn-primary card-link" href="/login">Login</a>
+        </div>
+    </div>
+</div>
+<% } else { %>
+<div id="flashCard" class="card mx-auto text-light" style="width: 75%;">
+    <div class="card-body">
+        <div class="container my-4 text-center">
+            <h3 class="display-3 text-center font-weight-bolder">
+                Get Your Telegram Link!
+            </h3>
+            <a class="btn btn-lg btn-primary card-link" href="https://t.me/mixnmatchBot?start=<%= currentUser.Token %>">HERE!</a>
+        </div>
+    </div>
+</div>
+<% } %>
+<div class="thumbnail"></div>
+<script type="text/javaScript" src="/js/index.js"></script>
+
+<%- include("../partials/footer") %>

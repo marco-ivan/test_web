@@ -1,46 +1,57 @@
-<%- include("../partials/header") %> 
+<%- include("../partials/header") %>
 
 <h2 id="forumHeader" class="title display-3">Edit Your Profile</h2>
+<span id="checkUname" class="d-none"><%= currentUser.Username %></span>
+<span id="checkEmail" class="d-none"><%= currentUser.Email %></span>
+<span id="checkMN" class="d-none"><%= currentUser.Mobile_number %></span>
 
 <div id="containerReg" class="container">
-        <h1>Personal Details:</h1>
-        <form class="thumbnail" id="form" action="/profile/<%= currentUser.user_id %>?_method=PUT" method="POST">
-            <div class="form-group" id="username">
-                <label for="username_input">Username: </label>
-                <input class="form-control" type="text" name="username_input" id="username_input" value="<%= currentUser.Username %>" onchange="validateUsername(); validateUniqueUsername()">
-                <small class="form-text text-muted"> </small>
-            </div>
-            <div class="form-group" id="password">
-                <label for="password_input">Password: </label>
-                <input class="form-control" type="password" name="password_input" id="password_input" placeholder="Enter your password" onchange="validatePassword(); validateConfirmPassword()">
-            </div>
-            <div class="form-group" id="confirm_password">
-                <label for="confirm_password_input">Confirm password: </label>
-                <input class="form-control" type="password" name="confirm_password_input" id="confirm_password_input" placeholder="Confirm password" onchange="validateConfirmPassword()">
-            </div>
-            <div class="form-group" id="email">
-                <label for="email_input">Email: </label>
-                <input class="form-control" type="text" name="email_input" id="email_input" value="<%= currentUser.Email %>" onchange="validateEmail(); validateUniqueEmail()">
-            </div>
-            <div class="form-group" id="address" name="address">
-                <label for="address_autocomplete">Address: </label>
-                <input class="form-control" id="autocomplete" name="address_autocomplete" value="<%= currentUser.Address %>"  onFocus="geolocate()" type="text"/>
-            </div>
-            <div class="form-group" id="mobile_number">
-                <label for="mobile_number">Mobile Number: </label>
-                <input class="form-control" type="text" name="mobile_number_input" id="mobile_number_input" value="<%= currentUser.Mobile_number %>" onchange="validatePhoneNumber(); validateUniqueMobileNumber()">
-            </div>
+    <h1>Personal Details:</h1>
+    <form class="thumbnail" id="form" action="/profile/<%= currentUser.user_id %>?_method=PUT" method="POST">
+        <div class="form-group" id="username">
+            <label for="username_input">Username: </label>
+            <input class="form-control" type="text" name="username_input" id="username_input"
+                value="<%= currentUser.Username %>" onchange="validateUsername(); validateUniqueUsername();">
+            <small class="form-text text-muted"> </small>
+        </div>
+        <div class="form-group" id="password">
+            <label for="password_input">Password: </label>
+            <input class="form-control" type="password" name="password_input" id="password_input"
+                placeholder="Enter your password" onchange="validatePassword(); validateConfirmPassword()">
+        </div>
+        <div class="form-group" id="confirm_password">
+            <label for="confirm_password_input">Confirm password: </label>
+            <input class="form-control" type="password" name="confirm_password_input" id="confirm_password_input"
+                placeholder="Confirm password" onchange="validateConfirmPassword()">
+        </div>
+        <div class="form-group" id="email">
+            <label for="email_input">Email: </label>
+            <input class="form-control" type="text" name="email_input" id="email_input" value="<%= currentUser.Email %>"
+                onchange="validateEmail(); validateUniqueEmail()">
+        </div>
+        <div class="form-group" id="address" name="address">
+            <label for="address_autocomplete">Address: </label>
+            <input class="form-control" id="autocomplete" name="address_autocomplete" value="<%= currentUser.Address %>"
+                onFocus="geolocate()" type="text" />
+        </div>
+        <div class="form-group" id="mobile_number">
+            <label for="mobile_number">Mobile Number: </label>
+            <input class="form-control" type="text" name="mobile_number_input" id="mobile_number_input"
+                value="<%= currentUser.Mobile_number %>" onchange="validatePhoneNumber(); validateUniqueMobileNumber()">
+        </div>
 
-            <br>
-            <br>
-            <br>
-            <input class="btn btn-lg btn-danger"type="submit" value="Edit">
-            <br><br>
-        </form>
+        <br>
+        <br>
+        <br>
+        <input class="btn btn-lg btn-danger" type="submit" value="Edit">
+        <br><br>
+    </form>
 
-        <script src="/js/jquery.js"></script>
-        <script src="/js/autocomplete.js"></script>
-        <script src="/js/edit_validation.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIWEKaDIthMAPmibgP4PEIUuNeCP69fi0&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/autocomplete.js"></script>
+    <script src="/js/edit_validation.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIWEKaDIthMAPmibgP4PEIUuNeCP69fi0&libraries=places&callback=initAutocomplete"
+        async defer></script>
 </div>
-<%- include("../partials/footer") %>  
+<%- include("../partials/footer") %>

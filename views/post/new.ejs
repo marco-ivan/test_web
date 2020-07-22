@@ -1,51 +1,37 @@
 <%- include("../partials/header") %>
 <h2 id="forumHeader" class="title display-2">Create a New Post</h2>
-<!-- <div class="container" style="width: 60%;">
-    <form class="thumbnail" id="form" action="/forum" method="POST">
-        <div class="form-group">
-            <label for="postTitle">Title: </label>
-            <input class="form-control" id="postTitle" type="text" name="post[title]" placeholder="Title">
-            <small class="form-text text-muted"> </small>
-        </div>
-        <div class="form-group">
-            <label for="postContent">Title: </label>
-            <input class="form-control" id="postContent" type="text" name="post[content]" placeholder="Title">
-            <small class="form-text text-muted"> </small>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-lg btn-primary">Submit</button>
-        </div>
-        <a href="/forum">Go back</a>
-    </form> -->
 
-    <div class="container">
-        <form id="form" action="/forum" method="POST">
-            <div class="card">
+<div class="container my-5">
+    <form id="form" action="/forum" method="POST">
+        <div class="card">
 
-                <p class="card-title bg-primary pl-5 py-4 text-light"><strong>New Discussion</strong></p>
+            <h2 class="card-title bg-primary pl-5 py-4 text-light"><strong>New Discussion</strong></h2>
 
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend col-3">
-                            <label class="input-group-text col-12" for="title">Title:</label>
-                        </div>
-                        <input type="text" class="form-control" id="title" name="post[title]" placeholder="Enter your title...">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend col-3">
+                        <label class="input-group-text col-12" for="title">Title:</label>
                     </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend col-3">
-                            <label class="input-group-text col-12" for="title">Message:</label>
-                        </div>
-                        <textarea id="postContent" class="form-control" name="post[content]" aria-label="With textarea"
-                            placeholder="Enter your message..."></textarea>
-                    </div>
+                    <input type="text" class="form-control" id="title" name="post[title]"
+                        placeholder="Enter your title..." required>
                 </div>
 
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend col-3">
+                        <label class="input-group-text col-12" for="title">Message:</label>
+                    </div>
+                    <textarea id="postContent" class="form-control" name="post[content]" aria-label="With textarea"
+                        placeholder="Enter your message..." required></textarea>
+                </div>
             </div>
-            <div class="form-group my-5">
-                <button type="submit" class="btn btn-lg btn-primary">Submit</button>
-            </div>
-        </form>
-    </div>
 
-    <%- include("../partials/footer") %>
+        </div>
+        <div class="form-group my-5">
+            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="thumbnail">
+</div>
+
+<%- include("../partials/footer") %>

@@ -1,7 +1,9 @@
 //This is where we put all the middlewares that are going to be called in the main (app.js) server file.
 
-var Post = require("../models/post");
-var Comment = require("../models/comment");
+const Post      = require("../models/post");
+const Comment   = require("../models/comment");
+const sqlDB     = require("../config/database");
+const db = require("../config/database");
 
 // all the middleare goes here
 var middlewareObj = {};
@@ -15,9 +17,11 @@ middlewareObj.checkPostOwnership = async function (req, res, next) {
         res.redirect("back");
       } else {
         // does user own the post?
-        if (foundPost.author.id === user.user_id) {
+        if (foundPost.author.id == user.user_id) {
           next();
         } else {
+          console.log(user.user_id);
+          console.log(foundPost.author.id);
           req.flash("error", "You don't have permission to do that");   //Error Message
           res.redirect("back");
         }
@@ -37,11 +41,35 @@ middlewareObj.checkCommentOwnership = async function (req, res, next) {
         res.redirect("back");
       } else {
         // does user own the comment?
-        if (foundComment.author.id === user.user_id) {
+        if (foundComment.author.id == user.user_id) {
           next();
         } else {
           req.flash("error", "You don't have permission to do that");
           res.redirect("back");
+        }
+      }
+    });
+  } else {
+    req.flash("error", "You need to be logged in to do that");
+    res.redirect("back");
+  }
+}
+
+middlewareObj.checkUserOwnership = async function(req, res, next) {
+  const user = await req.user;
+  if (req.isAuthenticated()) {
+    db.query("SELECT * FROM user WHERE user_id=?", req.params.userId, 
+    function(err, results, fields) {
+      if (err) {
+        console.log(err);
+        res.redirect("back");
+      } else {
+        //Does the user own that ID?
+        if (results[0].Username === user.Username) {
+          next();
+        } else {
+          req.flash("error", "You don't have permission to do that");
+          res.redirect("back")
         }
       }
     });
