@@ -44,26 +44,27 @@
                             class="fa fa-user-plus"></i></a></li>
                 <li><a href="/login" class="text-light display-5">Login <i class="fa fa-user"></i></a></li>
                 <% } else { %>
-                <li class="mr-3"><a href="/profile" class="text-light display-5">Welcome, <%= currentUser.Username %></a></li>
+                <li class="mr-3"><a href="/profile" class="text-light display-5">Welcome,
+                        <%= currentUser.Username %></a></li>
                 <li><a href="/logout" class="text-light display-5">Logout<i class="fa fa-user"></i></a></li>
                 <% } %>
             </ul>
         </div>
     </nav>
     <% if(error && error.length > 0){ %>
-        <div class="container mt-3 mb-0 p-0">
-          <div class="alert alert-danger" role="alert">
-              <%= error %>
-          </div>
+    <div class="container mt-3 mb-0 p-0">
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
         </div>
-      <% } %>
-      <% if(success && success.length > 0){ %>
-        <div class="container mt-3 mb-0 p-0">
-          <div class="alert alert-success" role="alert">
-              <%= success %>
-          </div>
+    </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+    <div class="container mt-3 mb-0 p-0">
+        <div class="alert alert-success" role="alert">
+            <%= success %>
         </div>
-      <% } %>
+    </div>
+    <% } %>
 
     <h2 id="forumHeader" class="title display-2 mb-5">Discussion Page</h2>
     <div class="thumbnail">
@@ -74,7 +75,8 @@
             <div class="card-body pt-4 pl-4">
                 <h5 class="card-title"><%= post.title %></h5>
                 <h6 class="card-subtitle"><em>Submitted by <%= post.author.username %></em></h6>
-                <p class="card-text my-5"><%= post.content %></p>
+                <p id="postContent" class="card-text my-5"><%- post.content %></p>
+                <!-- <a onclick="escapeVal(this.form.area,'<br>')" class="btn btn-success">View Original</a> -->
                 <% if(currentUser && post.author.id == currentUser.user_id){ %>
                 <a href="/forum/<%= post._id %>/edit" class="btn btn-warning">Edit</a>
                 <form id="delete-form" action="/forum/<%= post._id %>?_method=DELETE" method="POST">
@@ -91,21 +93,20 @@
                 </div>
                 <div class="col-md-10" style="width: 100%;">
                     <div class="card-body">
-                        <p class="card-text"><%= comment.text %></p>
+                        <p class="card-text"><%- comment.text %></p>
                     </div>
                 </div>
             </div>
             <% if(currentUser && comment.author.id == currentUser.user_id){ %>
             <a class="btn btn-xs btn-primary" href="/forum/<%= post._id %>/comments/<%= comment._id %>/edit">Edit</a>
-            <form action="/forum/<%= post._id %>/comments/<%=comment._id %>?_method=DELETE"
-                method="POST">
+            <form action="/forum/<%= post._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
                 <input type="submit" class="btn btn-xs btn-danger" value="Delete" style="width: 100%;">
             </form>
             <% } %>
         </div>
         <% }) %>
         <div class="row justify-content-end pr-3 my-5">
-            <a id="toggle-button" type="button" class="btn btn-lg btn-info">Add a Comment</a>
+            <a id="toggle-button" type="button" class="text-light btn btn-lg btn-info">Add a Comment</a>
         </div>
         <div id="toggleStyle" class="my-5">
             <form action="/forum/<%= post._id %>/comments" method="POST">
@@ -114,10 +115,11 @@
                     <div class="card comment-box">
                         <div class="form-group">
                             <label for="reply-box">Reply:</label>
-                            <textarea id="reply-box" name="comment[text]" class="form-control" aria-label="With textarea" placeholder="Enter your message..."></textarea>
+                            <textarea id="reply-box" name="comment[text]" class="form-control"
+                                aria-label="With textarea" placeholder="Enter your message..." required></textarea>
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-info btn-primary">
+                    <input type="submit" class="btn btn-lg btn-info btn-primary">
                 </div>
             </form>
         </div>
@@ -125,4 +127,5 @@
 
     <script src="/js/jquery.js"></script>
     <script type="text/javaScript" src="/js/comment.js"></script>
-<%- include("../partials/footer") %>
+    <script type="text/javaScript" src="/js/linebreak.js"></script>
+    <%- include("../partials/footer") %>

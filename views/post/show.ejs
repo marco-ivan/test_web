@@ -11,7 +11,7 @@
 
             <div class="py-0 directory-table my-5">
                 <table class="table">
-                    <thead>
+                    <thead class="bg-lightGreen text-light">
                         <tr>
                             <th><strong>Title</strong></th>
                             <th><strong>Date</strong></th>
@@ -21,8 +21,8 @@
 
                     <tbody class="table-element">
                         <% posts.forEach(function(post) { %>
-                            <tr>
-                                <td><a href="/forum/<%= post._id %>""><%= post.title %></a></td>
+                        <tr>
+                            <td><a href="/forum/<%= post._id %>""><%= post.title %></a></td>
                                 <td><%= post.created.toDateString() %></td>
                                 <td><%= post.author.username %></td>
                             </tr>
@@ -33,5 +33,7 @@
         </ul>
     </div>
 </div>
+<div class=" thumbnail">
+            </div>
 
 <%- include("../partials/footer") %>

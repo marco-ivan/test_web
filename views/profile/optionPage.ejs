@@ -3,14 +3,16 @@
 
 <div class="container my-5">
     <div class="card my-5 text-center">
-        <h4 class="display-4">Edit Your Profile Here</h4>
-        <a id="profile-button" href="/profile/<%= currentUser.user_id %>/edit" type="button" class="btn btn-lg btn-primary">GO</a>
+        <h1 class="my-3">Edit Your Profile Here</h1>
+        <a id="profile-button" href="/profile/<%= currentUser.user_id %>/edit" type="button"
+            class="btn btn-lg btn-primary"><strong>EDIT</strong></a>
     </div>
     <br>
     <br>
     <div class="card my-5 text-center">
-        <h4 class="display-4">View Your Order History Here</h4>
-        <a id="history-button" href="/profile/<%= currentUser.user_id %>/history" type="button" class="btn btn-lg btn-primary">GO</a>
+        <h1 class="my-3">View Your Order History Here</h1>
+        <a id="history-button" href="/profile/<%= currentUser.user_id %>/history" type="button"
+            class="btn btn-lg btn-primary"><strong>VIEW</strong></a>
     </div>
 </div>
 
@@ -18,6 +20,6 @@
 <br>
 <br>
 
-    
+
 
 <%- include("../partials/footer") %>

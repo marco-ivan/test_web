@@ -1,0 +1,46 @@
+<%- include("../partials/header") %>
+
+<h2 id="forumHeader" class="title display-2 my-5">History</h2>
+
+<div class="container">
+  <div class="card">
+    <div class="card-header text-center bg-success text-light">
+      <h2>Your Order on <%= order.date %>
+      </h2>
+    </div>
+    <div class="card-body px-5">
+      <h1 class="card-title text-center mt-4">Order Details</h1>
+      <br>
+      <hr class="style14">
+      <br>
+      <br>
+      <h4 class="card-text pl-4">Ordered from : <%= order.order_from %></h4>
+      <br>
+      <h4 class="card-text pl-4">Ordered to : <%= order.order_to %></h4>
+      <br>
+      <!-- <h4 class="card-text pl-4">Ordering with :</h4>
+          <ul>
+          <% people.forEach(function(person) { %>
+            <li><%= person.Username %></li>
+          <% }); %>
+          </ul> -->
+      <hr class="style14">
+      <br>
+      <h3 class="text-center">List</h3>
+      <br>
+      <ul class="list-group list-group-flush my-4">
+        <% details.forEach(function(detail) { %>
+        <% if (detail.order_id === order.order_id) { %>
+        <li class="list-group-item my-2"><strong><%= detail.item %></strong></li>
+        <% }}); %>
+      </ul>
+      <br>
+      <br>
+      <a href="/profile/<%= currentUser.user_id %>/history" class="btn btn-lg btn-success">Go Back</a>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/footer") %>

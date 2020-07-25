@@ -1,26 +1,33 @@
 <%- include("../partials/header") %>
 <h2 id="forumHeader" class="title display-2">Edit Your Comment</h2>
 
-    <div class="container">
-        <form id="form" action="/forum/<%= post_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
-            <div class="card">
-
-                <p class="card-title bg-primary pl-5 py-4 text-light"><strong>Edit Comment</strong></p>
-
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend col-3">
-                            <label class="input-group-text col-12" for="title">Comment:</label>
-                        </div>
-                        <textarea id="postContent" class="form-control" name="comment[text]" aria-label="With textarea"><%= comment.text %></textarea>
-                    </div>
-                </div>
-
-            </div>
-            <div class="form-group my-5">
-                <button type="submit" class="btn btn-lg btn-primary">Submit</button>
-            </div>
-        </form>
+<div class="container">
+    <div class="thumbnail bg-success text-light p-2">
+        <ul class="mt-2">
+            <li>Use "strong" or "em" html tag to bold the word you want to emphasize. <a class="btn btn-sm btn-primary" href="https://www.techonthenet.com/html/elements/strong_tag.php#:~:text=The%20HTML%20tag%20gives,as%20the%20element.">Details here</a> <br></li>
+            <li>Use "br" html tag to write in a new line. <a class="btn btn-sm btn-primary" href="https://www.w3schools.com/tags/tag_br.asp">Details here</a></li>
+        </ul>
     </div>
+    <form id="form" action="/forum/<%= post_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+        <div class="card">
 
-    <%- include("../partials/footer") %>
+            <p class="card-title bg-primary pl-5 py-4 text-light"><strong>Edit Comment</strong></p>
+
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend col-3">
+                        <label class="input-group-text col-12" for="title">Comment:</label>
+                    </div>
+                    <textarea id="postContent" class="form-control" name="comment[text]" aria-label="With textarea"
+                        required><%= comment.text %></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group my-5">
+            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<%- include("../partials/footer") %>

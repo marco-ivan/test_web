@@ -1,0 +1,176 @@
+<%- include("../partials/header") %>
+
+<div class="jumbo jumbo2 rounded mt-3 mx-auto" style="width: 95%;">
+    <div id="jumboPic" class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="align-items-center content">
+                <h1 class="text-light text-center">Explore With Us!!!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-4">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-9">
+            <div class="box">
+                <h3 class="text-center displayContent">
+                    Are you hungry?
+                </h3>
+                <p class="displayContent">
+                    Fret not, we are here for you. Mix n Match is a platform where you can order food <strong>TOGETHER</strong>. 
+                    This came from the idea where the delivery cost for food delivery in Singapore is quiet expensive 
+                    and become such a burden when you are ordering it alone. We use GoogleMap API to contact neighbors who also 
+                    uses our platform if you want to order something so that you guys can <strong>COLLATE</strong> your order 
+                    and enjoy your food.
+                </p>
+                <p class="displayContent">
+                    Below are the <strong>STEPS</strong> on how to use our bot.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <div class="box mx-auto">
+                    <h3 class="text-center displayContent">
+                        1. Register
+                    </h3>
+                    <p class="displayContent">
+                        Simply register yourself to this website. After you register, you can go to your profile and check for the 
+                        <strong>Mix n Match Telegram Bot token</strong> and use it to connect with our Telegram bot, which will do 
+                        most of the collating order parts of our platform
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box2 mx-auto">
+                    <img src="source/register.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5 order-md-2">
+                <div class="box mx-auto">
+                    <h3 class="text-center displayContent">
+                        2. Go to Telegram
+                    </h3>
+                    <p class="displayContent">
+                        Go to your <strong>Telegram</strong> and connect or add the bot to your account. The name of the bot should 
+                        be "Mix n Match" and to start the bot, type <strong>/start</strong> and send to the bot. The bot then will further 
+                        notify you about upcoming collate orders.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box2 mx-auto">
+                    <img src="source/telegram.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <div class="box mx-auto">
+                    <h3 class="text-center displayContent">
+                        3. Create a Group
+                    </h3>
+                    <p class="displayContent">
+                        Create a <strong>Telegram Group</strong> and invite the bot to that group. To start the order, you need to first 
+                        fill in <strong>5 requirements</strong> using telegrams commands so the bot could verify your order 
+                        and notify other users around you. The commands are <strong>/orderfrom</strong>, <strong>/orderto</strong>, 
+                        <strong>/invitelink</strong>, <strong>/ordertime</strong>, and <strong>/paymenttime</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box2 mx-auto">
+                    <img src="source/group.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5 order-md-2">
+                <div class="box mx-auto">
+                    <h3 class="text-center displayContent">
+                        For those who are notified
+                    </h3>
+                    <p class="displayContent">
+                        Our Telegram Bot will send you a message about the <strong>Details of the order</strong>. Inside the message, 
+                        the bot will say "To join the group, please type /join -(random numbers)" and you just need to type 
+                        <strong>/join -(random numbers)</strong> and our bot will give you the link to join the group.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box2 mx-auto">
+                    <img src="source/notify.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <div class="box mx-auto">
+                    <h3 class="text-center displayContent">
+                        4. Add Your Order
+                    </h3>
+                    <p class="displayContent">
+                        There are some commands to use our bot which you can access by typing <strong>/commandlist</strong>. Some 
+                        useful command such as <strong>/menu (name of the restaurant)</strong>, <strong>/add (food)</strong>, 
+                        <strong>/remove (food)</strong>, and <strong>/orderstatus</strong>. For further explanation of the command, 
+                        you can visit <a href="command_list">Command List</a> page.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box2 mx-auto">
+                    <img src="source/order.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5 order-md-2">
+                <div class="box mx-auto">
+                    <h3 class="text-center displayContent">
+                        5. Payment Time!!!
+                    </h3>
+                    <p class="displayContent">
+                        After the order time ends, the bot will automaticly disable the <strong>/add (food)</strong> and <strong>/remove (food)</strong> 
+                        command will then proceed to the payment time. In this phase, the person who created the group must check and 
+                        input the delivery fee using <strong>/deliverycost</strong> command. During the payment time, all participants 
+                        must pay to the person who created the group using PayNow or PayLah. The orderee then can <strong>verify</strong> 
+                        the person who has paid him/her
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box2 mx-auto">
+                    <img src="source/pay1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <div class="box mx-auto">
+                    <h3 class="text-center displayContent">
+                        ENJOY YOUR FOOD
+                    </h3>
+                    <p class="displayContent">
+                        When the food arrives, the person who created the group <strong>MUST NOTIFY</strong> others who participated in 
+                        the collated order and tell the preferred place to meet and take the food.
+                    </p>
+                    <p class="displayContent">
+                        <strong>ENJOY YOUR FOOD!!!😊</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box2 mx-auto">
+                    <img src="source/foodCute.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="thumbnail"></div>
+<script type="text/javaScript" src="/js/index.js"></script>
+
+<%- include("../partials/footer") %>

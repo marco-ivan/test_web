@@ -1,0 +1,56 @@
+<%- include("../partials/header") %>
+<div id="containerReg" class="container">
+    <h1>Registration</h1>
+    <form class="thumbnail" id="form" action="/register" method="POST">
+        <div class="form-group" id="username">
+            <label for="username_input">Username: </label>
+            <input class="form-control" type="text" name="username_input" id="username_input"
+                placeholder="Enter your username" onchange="validateUsername(); validateUniqueUsername()">
+            <small class="form-text text-muted"> </small>
+        </div>
+        <div class="form-group" id="password">
+            <label for="password_input">Password: </label>
+            <input class="form-control" type="password" name="password_input" id="password_input"
+                placeholder="Enter your password" onchange="validatePassword(); validateConfirmPassword()">
+        </div>
+        <div class="form-group" id="confirm_password">
+            <label for="confirm_password_input">Confirm password: </label>
+            <input class="form-control" type="password" name="confirm_password_input" id="confirm_password_input"
+                placeholder="Confirm password" onchange="validateConfirmPassword()">
+        </div>
+        <div class="form-group" id="email">
+            <label for="email_input">Email: </label>
+            <input class="form-control" type="text" name="email_input" id="email_input"
+                placeholder="Enter your email address" onchange="validateEmail(); validateUniqueEmail()">
+        </div>
+        <div class="form-group" id="address" name="address">
+            <label for="address_autocomplete">Address: </label>
+            <input class="form-control" id="autocomplete" name="address_autocomplete" placeholder="Enter your address"
+                onFocus="geolocate()" type="text" />
+        </div>
+        <div class="form-group" id="mobile_number">
+            <label for="mobile_number">Mobile Number: </label>
+            <input class="form-control" type="text" name="mobile_number_input" id="mobile_number_input"
+                placeholder="Enter your Singapore's phone number"
+                onchange="validatePhoneNumber(); validateUniqueMobileNumber()">
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <input class="btn btn-lg btn-danger" type="submit" value="Sign Up">
+        <br><br>
+    </form>
+    <br>
+    <a class="text-primary" href="/login">Already have account? Click here to go to login page!</a>
+    <br>
+    <br>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/autocomplete.js"></script>
+    <script src="/js/validation.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIWEKaDIthMAPmibgP4PEIUuNeCP69fi0&libraries=places&callback=initAutocomplete"
+        async defer></script>
+</div>
+<%- include("../partials/footer") %>
