@@ -111,10 +111,13 @@ textarea {
     margin-top : 0;
 }
 
+<<<<<<< HEAD:public/style/Main.css
 #postContent {
     word-wrap: break-word;
 }
 
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9:views/style/Main.css
 .bg-lightGreen {
     background-color: #01579B;
 }

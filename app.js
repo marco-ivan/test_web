@@ -2,7 +2,14 @@
 
 //Including all the npm packages to this file after installing it using npm install and write is as a dependency
 //to the file.
+<<<<<<< HEAD
 require('dotenv').config();                                     //For including hidden data in dotenv file.
+=======
+
+
+require('dotenv').config();                                     //For including hidden data in dotenv file.
+
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
 const axios                 = require("axios");                 //To do API Calls.
 const mysql                 = require("mysql");                 //To include and manipulate data from MySQL.
 const bcrypt                = require("bcrypt");                //To turn the password into some non-readable string.

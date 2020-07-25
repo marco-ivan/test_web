@@ -6,7 +6,10 @@ const express                 = require("express");
 const router                  = express.Router();
 const Post                    = require("../models/post");
 const middleware              = require("../middleware");
+<<<<<<< HEAD
 const expressSanitizer          = require("express-sanitizer");     //Sanitizing the textarea input.
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
 
 
 
@@ -33,7 +36,10 @@ router.get("/new", middleware.isLoggedIn, function (req, res) {
 //CREATE -- To put the new post into the database (MongoDB).
 router.post("/", middleware.isLoggedIn, async function (req, res) {
     const user = await req.user;
+<<<<<<< HEAD
     req.body.post.content = req.sanitize(req.body.post.content);
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
     //Storing data into our DB
     Post.create(req.body.post, function (err, newPost) {
         if (err) {
@@ -56,9 +62,14 @@ router.post("/", middleware.isLoggedIn, async function (req, res) {
 router.get("/:id", function (req, res) {
     //find the post with provided ID
     Post.findById(req.params.id).populate("comments").exec(function (err, foundPost) {
+<<<<<<< HEAD
         if (err || !foundPost) {
             req.flash("error", "Post not found");
             res.redirect("/forum");
+=======
+        if (err) {
+            console.log(err);
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
         } else {
             //render show template with that post
             res.render("post/showPost.ejs", { post: foundPost });
@@ -75,7 +86,10 @@ router.get("/:id/edit", middleware.checkPostOwnership, function (req, res) {
 
 // UPDATE POST ROUTE
 router.put("/:id", middleware.checkPostOwnership, function (req, res) {
+<<<<<<< HEAD
     req.body.post.content = req.sanitize(req.body.post.content);
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
     // Find and Update the CORRECT post
     Post.findByIdAndUpdate(req.params.id, req.body.post, function (err, updatedPost) {
         if (err) {

@@ -72,7 +72,11 @@ router.put("/:userId", middleware.checkUserOwnership, async function(req, res) {
                 db.query("UPDATE user SET Username = ?, Password = ?, Email = ?, Address = ?, " +
                 "Mobile_number = ?, Longitude = ?, Latitude = ? WHERE user_id=?", data,
                     function (err, results, fields) {
+<<<<<<< HEAD
                         if (err || !results) throw err;
+=======
+                        if (err) throw err;
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
 
                         console.log(results);
                     });
@@ -115,7 +119,11 @@ router.get("/:userId/history/:orderID", middleware.checkUserOwnership, async fun
         ]
         db.query("SELECT * FROM history WHERE order_id=?", req.params.orderID, 
         function(err, results, fields) {
+<<<<<<< HEAD
             if (err || !results) throw err;
+=======
+            if (err) throw err;
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
             // console.log(results);
             // console.log(results.length);
             if (results.length > 1){
@@ -130,7 +138,11 @@ router.get("/:userId/history/:orderID", middleware.checkUserOwnership, async fun
         });
         db.query("SELECT * FROM food_history WHERE order_id=? AND user_id=?", data, 
         async function(err, results, fields) {
+<<<<<<< HEAD
             if (err || !results) throw err;
+=======
+            if (err) throw err;
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
     
             details = results;
             // if (orders.length > 1) {

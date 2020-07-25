@@ -6,7 +6,10 @@ const router                = express.Router({ mergeParams: true });
 const Post                  = require("../models/post");
 const Comment               = require("../models/comment");
 const middleware            = require("../middleware");
+<<<<<<< HEAD
 const expressSanitizer      = require("express-sanitizer");     //Sanitizing the textarea input.
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
 
 
 //=====================================================================
@@ -16,7 +19,10 @@ const expressSanitizer      = require("express-sanitizer");     //Sanitizing the
 //Comments CREATE
 router.post("/", middleware.isLoggedIn, async function (req, res) {
     const user = await req.user;
+<<<<<<< HEAD
     req.body.comment.text = req.sanitize(req.body.comment.text);
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
     //lookup Post using ID
     Post.findById(req.params.id, function (err, foundPost) {
         if (err) {
@@ -47,6 +53,7 @@ router.post("/", middleware.isLoggedIn, async function (req, res) {
 
 // COMMENT EDIT ROUTE
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, function (req, res) {
+<<<<<<< HEAD
     Post.findById(req.params.id, function (err, foundCampground) {
         if (err || !foundCampground) {
             req.flash("error", "No post found");
@@ -61,12 +68,25 @@ router.get("/:comment_id/edit", middleware.checkCommentOwnership, function (req,
                 res.render("./comments/edit.ejs", { post_id: req.params.id, comment: foundComment });
             }
         })
+=======
+    //Finding the comment details in the DB
+    Comment.findById(req.params.comment_id, function (err, foundComment) {
+        if (err) {
+            req.flash("error", "Something went wrong");
+            res.redirect("back");
+        } else {
+            res.render("./comments/edit.ejs", { post_id: req.params.id, comment: foundComment });
+        }
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
     });
 });
 
 // COMMENT UPDATE
 router.put("/:comment_id", middleware.checkCommentOwnership, function (req, res) {
+<<<<<<< HEAD
     req.body.comment.text = req.sanitize(req.body.comment.text);
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
     //// Find and Update the CORRECT Comment
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function (err, updatedComment) {
         if (err) {

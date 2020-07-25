@@ -20,6 +20,8 @@ middlewareObj.checkPostOwnership = async function (req, res, next) {
         if (foundPost.author.id == user.user_id) {
           next();
         } else {
+          console.log(user.user_id);
+          console.log(foundPost.author.id);
           req.flash("error", "You don't have permission to do that");   //Error Message
           res.redirect("back");
         }
@@ -59,8 +61,13 @@ middlewareObj.checkUserOwnership = async function(req, res, next) {
   if (req.isAuthenticated()) {
     db.query("SELECT * FROM user WHERE user_id=?", req.params.userId, 
     function(err, results, fields) {
+<<<<<<< HEAD
       if (err || !results) {
         req.flash("error", "Something went wrong");
+=======
+      if (err) {
+        console.log(err);
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
         res.redirect("back");
       } else {
         //Does the user own that ID?

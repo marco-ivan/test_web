@@ -2,12 +2,15 @@
 <h2 id="forumHeader" class="title display-2">Create a New Post</h2>
 
 <div class="container my-5">
+<<<<<<< HEAD
     <div class="thumbnail bg-success text-light p-2">
         <ul class="mt-2">
             <li>Use "strong" or "em" html tag to bold the word you want to emphasize. <a class="btn btn-sm btn-primary" href="https://www.techonthenet.com/html/elements/strong_tag.php#:~:text=The%20HTML%20tag%20gives,as%20the%20element.">Details here</a> <br></li>
             <li>Use "br" html tag to write in a new line. <a class="btn btn-sm btn-primary" href="https://www.w3schools.com/tags/tag_br.asp">Details here</a></li>
         </ul>
     </div>
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
     <form id="form" action="/forum" method="POST">
         <div class="card">
 
@@ -26,7 +29,11 @@
                     <div class="input-group-prepend col-3">
                         <label class="input-group-text col-12" for="title">Message:</label>
                     </div>
+<<<<<<< HEAD
                     <textarea onchange="escapeVal(this.form.area,'<br>')" id="postContent" class="form-control" name="post[content]" aria-label="With textarea"
+=======
+                    <textarea id="postContent" class="form-control" name="post[content]" aria-label="With textarea"
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
                         placeholder="Enter your message..." required></textarea>
                 </div>
             </div>
@@ -40,7 +47,10 @@
 <div class="thumbnail">
 </div>
 
+<<<<<<< HEAD
 <script src="/js/jquery.js"></script>
 <script type="text/javaScript" src="/js/linebreak.js"></script>
 
+=======
+>>>>>>> 75c601e34e0b5a74bfcc9a0269a1974e686057f9
 <%- include("../partials/footer") %>
